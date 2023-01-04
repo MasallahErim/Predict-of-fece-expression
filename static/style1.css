@@ -1,0 +1,128 @@
+.nav {
+  background-color: rgb(230, 230, 220); 
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  display: inline-flex;
+  font-size: 20px;
+  padding: 20px;
+}
+
+
+.button {
+  border: none;
+  color: white;
+  padding: 5px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.anatema{
+    /* background-color: rgb(252, 158, 247); */
+    height: 90vh;
+    width: 100%;
+    margin-top: 0;
+    display: block;
+}
+
+.form1{
+  display: block;
+  /* background-color: red; */
+
+}
+
+
+
+.formname{
+  margin-top: 10px;
+  margin-left: 150px;
+}
+
+
+.ciktilar{
+  display:flex;
+}
+
+
+.image{
+  /* background-color: rgb(255, 255, 255); */
+  height: 400px;
+  width: 350px;
+  margin-top: 10px;
+  margin-left: 50px;
+  
+}
+.image img {
+  height: 80%;
+  width: 100%;
+
+
+
+}
+
+.image_text{
+
+/* background-color: rgb(255, 255, 255); */
+height: 20px;
+width: 350px;
+
+
+
+}
+
+.suggests{
+  /* background-color: #00a151; */
+  height: 250px;
+  width: 50%;
+  margin-left: 50px;
+  margin-top: 10px;
+  display: block;
+}
+
+.suggest1 {
+  /* background-color: #ffffff; */
+  color: rgb(0, 0, 0);
+  height: 50px;
+  width: 100%;
+  margin-top: 25px;
+
+
+}
+
+.suggest2 {
+  /* background-color: #ffffff; */
+  color: rgb(0, 0, 0);
+  height: 50px;
+  width: 100%;
+  margin-top: 25px;
+}
+.suggest3 {
+  color: rgb(0, 0, 0);
+  /* background-color: #ffffff; */
+  height: 50px;
+  width: 100%;
+  margin-top:25px;
+}
+
+

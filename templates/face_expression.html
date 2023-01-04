@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+
+
+
+ <head>
+  <link rel="stylesheet" href="/static/deneme1.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='/deneme1.css') }}" />
+</head>
+
+
+
+<body >
+  <ul class="nav">
+    <li><a href="{{url_for('home')}}">Home</a></li>
+    <li><a href="#about">Hakkında</a></li>
+    <li><a href="https://www.linkedin.com/in/masallaherim/">Contact My Linkedin</a></li>  
+    <li><a href="https://github.com/MasallahErim">Contact My Github</a></li>
+  </ul>
+
+
+
+
+  <div class="anatema">
+
+    <div class="maincontainer">
+      <div class="alert1">
+       <p>
+         {% with messages = get_flashed_messages() %}
+           {% if messages %}
+             <ul>
+             {% for message in messages %}
+               <li>
+                 
+                  <div class="alert alert-warning" role="alert">{{ message }}</div>
+                       
+                     </div>
+               </li>
+             {% endfor %}
+             </ul>
+           {% endif %}
+         {% endwith %}
+       </p>
+       </div>
+
+
+    <div class="form1" >
+      <form action="/face_expression/add" method="post" enctype="multipart/form-data">
+        <input class="formname"      type="text" name="firstname"  placeholder="First name" aria-label="First name">
+        <input class="formlastname"  type="text" name="lastname"  placeholder="Last name" aria-label="Last name">
+        <input type="file"  name="file" multiple="true" required  id="exampleFormControlFile1">   
+        <button class="button button1" type="submit">Hadi yap</button>
+      </form>
+    </div>
+
+
+
+
+    {%if filename %}
+    <div class="ciktilar">
+
+      
+
+        <div class="image">
+          {%if predict%}
+          <img src="{{ url_for('display_image', filename=filename) }}" alt="hello">
+          
+          <div class="image_text">
+              <h6>{{name}} {{lastname}} <br>Tahminimce bu fotoğrafta {{predict}}</h6>
+            </div>
+          {%else%}
+        <h3>Bir hata var gibi fotoğrafı yükleyemedim yahu</h3>
+          {%endif%}
+        </div>
+        <style>
+    
+
+        </style>
+        <div class="suggests">
+          <div class="suggest1"><h3>Suggest for you:</h3>You are {{predict}}, I have a great suggestion that will change your expression <span style="color: red;font-size: large;">{{movie_name}}</span> You should definitely watch this movie </div>
+          <div class="suggest2"><br><h3>Statistics:</h3>IMBD Rate: {{movie_rate}}  |  Kind Of Movie: {{movie_genre}}  |  Year: {{movie_year}}</div>
+          <div class="suggest3"><br><h3>Summary:</h3>{{movie_summary}}</div>
+        </div>
+
+    {%else%}
+            <div class="alert alert-warning" role="alert">
+              Adınızı, Soyadınızı ve bir fotoğrafınızı rica ediyorum.
+      </div>
+          <img src="http://i.stack.imgur.com/SBv4T.gif" alt="this slowpoke moves"  width="250" />
+            
+    {%endif%}
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+
+
