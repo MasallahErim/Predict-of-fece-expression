@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="tr">
 
-
-
-
  <head>
-  <link rel="stylesheet" href="/static/deneme1.css">
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='/deneme1.css') }}" />
+ <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='/style1.css') }}" />
 </head>
 
 
@@ -15,16 +12,20 @@
 <body >
   <ul class="nav">
     <li><a href="{{url_for('home')}}">Home</a></li>
-    <li><a href="#about">Hakkında</a></li>
+    <li onclick="myFunction()" ><a href="#about">About Me</a></li>
     <li><a href="https://www.linkedin.com/in/masallaherim/">Contact My Linkedin</a></li>  
     <li><a href="https://github.com/MasallahErim">Contact My Github</a></li>
   </ul>
 
-
-
+  <p id="demo" style="color:black;font-size: 18px; margin-left: 40px; margin-right: 40px;"></p>
+  <script>
+  function myFunction() {
+    document.getElementById("demo").innerHTML = "I started my Bachelor's degree in mechatronic engineering at Karabuk University in 2017 and I graduated on January 2022.During my studies, I took an active role in the founding of the Karabük University Unmanned Aerial Vehicle (KBUIHA) club. Itook an active role in the field of image processing and autonomous flight capabilities of the unmanned aerial vehicles that we produced. In this way, I gained experience working in a team. I gained knowledge and experience in the field of unmanned aerial vehicles, image processing and deep learning in the competitions and projects I took part in during my undergraduate studies. I would like to state that I am extremely devoted and enthusiastic to improving myself, and that I take the responsibilities required by my position with curiosity and enthusiasm.";
+  }
+  </script>
+  
 
   <div class="anatema">
-
     <div class="maincontainer">
       <div class="alert1">
        <p>
@@ -68,7 +69,7 @@
           <img src="{{ url_for('display_image', filename=filename) }}" alt="hello">
           
           <div class="image_text">
-              <h6>{{name}} {{lastname}} <br>Tahminimce bu fotoğrafta {{predict}}</h6>
+              <h6 >{{name}} {{lastname}} <br>Tahminimce bu fotoğrafta {{predict}}</h6>
             </div>
           {%else%}
         <h3>Bir hata var gibi fotoğrafı yükleyemedim yahu</h3>
@@ -79,7 +80,7 @@
 
         </style>
         <div class="suggests">
-          <div class="suggest1"><h3>Suggest for you:</h3>You are {{predict}}, I have a great suggestion that will change your expression <span style="color: red;font-size: large;">{{movie_name}}</span> You should definitely watch this movie </div>
+          <div class="suggest1" style="font-size: 18px;"><h3>Suggest for you:</h3>Yüz ifadenizi değiştirecek harika bir önerim var <span style="color: red; font-size: 24px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">{{movie_name}}</span> bu filmi mutlaka izlemelisin</div>
           <div class="suggest2"><br><h3>Statistics:</h3>IMBD Rate: {{movie_rate}}  |  Kind Of Movie: {{movie_genre}}  |  Year: {{movie_year}}</div>
           <div class="suggest3"><br><h3>Summary:</h3>{{movie_summary}}</div>
         </div>
